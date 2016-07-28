@@ -1462,7 +1462,7 @@ class Worksheet(xmlwriter.XMLwriter):
         # Pad out the rest of the area with formatted blank cells.
         for row in range(first_row, last_row + 1):
             for col in range(first_col, last_col + 1):
-                if row == first_row and col == first_col:
+                if (row == first_row and col == first_col) or col == first_col:
                     continue
                 self.write_blank(row, col, '', cell_format)
 
